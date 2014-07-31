@@ -12,19 +12,25 @@ var eachNode = require("../")
 function test(grammar, expected) {
   var pass = function(ast) {
     var index = 0
-    eachNode(ast, function(node) {
-      node = shallowCopy(node)
+    var parents = {}
+    eachNode(ast, function(node, parent) {
+      var actualNode = shallowCopy(node)
 
       var data = expected[index]
       var expectedNode = data[0]
+      var parentId = data[1]
+      var expectedParent = (parentId === null ? null : parents[parentId])
 
-      if (data.length === 2) {
-        var keyToRemove = data[1]
-        expect(node).to.have.property(keyToRemove)
-        delete node[keyToRemove]
+      if (data.length === 4) {
+        var nodeId = data[3]
+        parents[nodeId] = node
+        var keyToRemove = data[2]
+        expect(actualNode).to.have.property(keyToRemove)
+        delete actualNode[keyToRemove]
       }
 
-      expect(node).to.deep.equal(expectedNode)
+      expect(actualNode).to.deep.equal(expectedNode)
+      expect(parent).to.equal(expectedParent)
 
       index++
     })
@@ -62,6 +68,29 @@ describe("eachNode", function() {
 
   it("runs the callback with the node and all its subnodes", function() {
     test(read("grammar.pegjs"), JSON.parse(read("grammar.nodes.json")))
+  })
+
+
+  it("allows to pass an initial parent", function() {
+    var initialParent = {}
+    var subNode = {}
+    var startNode = {expression: subNode}
+    var index = 0
+    eachNode(startNode, function(node, parent) {
+      switch (index) {
+        case 0:
+          expect(node).to.equal(startNode)
+          expect(parent).to.equal(initialParent)
+          break
+        case 1:
+          expect(node).to.equal(subNode)
+          expect(parent).to.equal(startNode)
+          break
+        default:
+          expect(index).to.be.below(2)
+      }
+      index++
+    }, initialParent)
   })
 
 })

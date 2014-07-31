@@ -2,214 +2,214 @@
   [{
     "type": "grammar",
     "initializer": null
-  }, "rules"],
+  }, null, "rules", "grammar"],
   [{
     "type": "rule",
     "name": "Rule"
-  }, "expression"],
+  }, "grammar", "expression", "Rule"],
   [{
     "type": "choice"
-  }, "alternatives"],
+  }, "Rule", "alternatives", "Rule-choice"],
   [{
     "type": "labeled",
     "label": "label"
-  }, "expression"],
+  }, "Rule-choice", "expression", "label-label"],
   [{
     "type": "literal",
     "value": "foo",
     "ignoreCase": false
-  }],
+  }, "label-label"],
   [{
     "type": "action",
     "code": " action 1 "
-  }, "expression"],
+  }, "Rule-choice", "expression", "action-action-1"],
   [{
     "type": "literal",
     "value": "foo",
     "ignoreCase": true
-  }],
+  }, "action-action-1"],
   [{
     "type": "action",
     "code": "action 3"
-  }, "expression"],
+  }, "Rule-choice", "expression", "action-action-3"],
   [{
     "type": "sequence"
-  }, "elements"],
+  }, "action-action-3", "elements", "action-action-3-sequence"],
   [{
     "type": "labeled",
     "label": "a"
-  }, "expression"],
+  }, "action-action-3-sequence", "expression", "label-a"],
   [{
     "type": "any"
-  }],
+  }, "label-a"],
   [{
     "type": "labeled",
     "label": "b"
-  }, "expression"],
+  }, "action-action-3-sequence", "expression", "label-b"],
   [{
     "type": "zero_or_more"
-  }, "expression"],
+  }, "label-b", "expression", "label-b-repeat"],
   [{
     "type": "action",
     "code": " return f "
-  }, "expression"],
+  }, "label-b-repeat", "expression", "action-return-f"],
   [{
     "type": "sequence"
-  }, "elements"],
+  }, "action-return-f", "elements", "action-return-f-sequence"],
   [{
     "type": "rule_ref",
     "name": "Space"
-  }],
+  }, "action-return-f-sequence"],
   [{
     "type": "labeled",
     "label": "f"
-  }, "expression"],
+  }, "action-return-f-sequence", "expression", "label-f"],
   [{
     "type": "rule_ref",
     "name": "Foo"
-  }],
+  }, "label-f"],
   [{
     "type": "simple_not"
-  }, "expression"],
+  }, "action-action-3-sequence", "expression", "action-action-3-sequence-not"],
   [{
     "type": "rule_ref",
     "name": "Space"
-  }],
+  }, "action-action-3-sequence-not"],
   [{
     "type": "simple_and"
-  }, "expression"],
+  }, "action-action-3-sequence", "expression", "action-action-3-sequence-and"],
   [{
     "type": "rule_ref",
     "name": "Foo"
-  }],
+  }, "action-action-3-sequence-and"],
   [{
     "type": "rule",
     "name": "Foo"
-  }, "expression"],
+  }, "grammar", "expression", "Foo"],
   [{
     "type": "sequence"
-  }, "elements"],
+  }, "Foo", "elements", "Foo-sequence"],
   [{
     "type": "any"
-  }],
+  }, "Foo-sequence"],
   [{
     "type": "semantic_and",
     "code": " return true "
-  }],
+  }, "Foo-sequence"],
   [{
     "type": "rule",
     "name": "Bar"
-  }, "expression"],
+  }, "grammar", "expression", "Bar"],
   [{
     "type": "named",
     "name": "bar"
-  }, "expression"],
+  }, "Bar", "expression", "Bar-named"],
   [{
     "type": "sequence"
-  }, "elements"],
+  }, "Bar-named", "elements", "Bar-named-sequence"],
   [{
     "type": "text"
-  }, "expression"],
+  }, "Bar-named-sequence", "expression", "Bar-named-sequence-dollar"],
   [{
     "type": "any"
-  }],
+  }, "Bar-named-sequence-dollar"],
   [{
     "type": "labeled",
     "label": "space"
-  }, "expression"],
+  }, "Bar-named-sequence", "expression", "label-space"],
   [{
     "type": "rule_ref",
     "name": "Space"
-  }],
+  }, "label-space"],
   [{
     "type": "semantic_not",
     "code": " return false "
-  }],
+  }, "Bar-named-sequence"],
   [{
     "type": "rule",
     "name": "Space"
-  }, "expression"],
+  }, "grammar", "expression", "Space"],
   [{
     "type": "class",
     "parts": [
       " ",
-    "\t"
-      ],
+      "\t"
+    ],
     "inverted": false,
     "ignoreCase": false,
     "rawText": "[ \\t]"
-  }],
+  }, "Space"],
   [{
     "type": "rule",
     "name": "Nested"
-  }, "expression"],
+  }, "grammar", "expression", "Nested"],
   [{
     "type": "action",
     "code": "\n    return text()\n  "
-  }, "expression"],
+  }, "Nested", "expression", "action-return-text"],
   [{
     "type": "sequence"
-  }, "elements"],
+  }, "action-return-text", "elements", "action-return-text-sequence"],
   [{
     "type": "literal",
     "value": "a",
     "ignoreCase": false
-  }],
+  }, "action-return-text-sequence"],
   [{
     "type": "one_or_more"
-  }, "expression"],
+  }, "action-return-text-sequence", "expression", "action-return-text-sequence-repeat"],
   [{
     "type": "action",
     "code": " return num + zero "
-  }, "expression"],
+  }, "action-return-text-sequence-repeat", "expression", "action-return-num+zero"],
   [{
     "type": "sequence"
-  }, "elements"],
+  }, "action-return-num+zero", "elements", "action-return-num+zero-sequence"],
   [{
     "type": "labeled",
     "label": "num"
-  }, "expression"],
+  }, "action-return-num+zero-sequence", "expression", "label-num"],
   [{
     "type": "choice"
-  }, "alternatives"],
+  }, "label-num", "alternatives", "label-num-choice"],
   [{
     "type": "action",
     "code": "one"
-  }, "expression"],
+  }, "label-num-choice", "expression", "action-one"],
   [{
     "type": "labeled",
     "label": "one"
-  }, "expression"],
+  }, "action-one", "expression", "label-one"],
   [{
     "type": "literal",
     "value": "1",
     "ignoreCase": false
-  }],
+  }, "label-one"],
   [{
     "type": "action",
     "code": "two"
-  }, "expression"],
+  }, "label-num-choice", "expression", "action-two"],
   [{
     "type": "labeled",
     "label": "two"
-  }, "expression"],
+  }, "action-two", "expression", "label-two"],
   [{
     "type": "literal",
     "value": "2",
     "ignoreCase": false
-  }],
+  }, "label-two"],
   [{
     "type": "labeled",
     "label": "zero"
-  }, "expression"],
+  }, "action-return-num+zero-sequence", "expression", "label-zero"],
   [{
     "type": "literal",
     "value": "0",
     "ignoreCase": false
-  }],
+  }, "label-zero"],
   [{
     "type": "literal",
     "value": "b",
     "ignoreCase": false
-  }]
+  }, "action-return-text-sequence"]
 ]

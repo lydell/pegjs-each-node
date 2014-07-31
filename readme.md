@@ -6,10 +6,14 @@ pegjs-each-node [![Build Status](https://travis-ci.org/lydell/pegjs-each-node.pn
 ```js
 var eachNode = require("pegjs-each-node")
 
-eachNode(startNode, function(node) {
+eachNode(startNode, function(node, parent) {
   // This function will be run once with `startNode` itself, and then once for
   // each of its subnodes.
   console.log(node.type)
+
+  // During the first run (when `node` is `startNode`), `parent` is null. (Or
+  // you may pass `parent` as the third argument to `eachNode`). Then `parent`
+  // is the node that contains `node`.
 })
 ```
 
