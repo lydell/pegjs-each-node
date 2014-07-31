@@ -1,0 +1,28 @@
+{
+  "name": "pegjs-each-node",
+  "version": "0.1.0",
+  "author": "Simon Lydell",
+  "license": "MIT",
+  "description": "pegjs plugin helper: Run a function once for each node in a grammar AST.",
+  "main": "index.js",
+  "repository": "lydell/pegjs-each-node",
+  "keywords": [
+    "pegjs",
+    "plugin",
+    "ast",
+    "traverse",
+    "each",
+    "forEach",
+    "node",
+    "nodes"
+  ],
+  "scripts": {
+    "test": "jshint index.js test/index.js && mocha"
+  },
+  "devDependencies": {
+    "mocha": "^1.17.1",
+    "jshint": "^2.4.4",
+    "chai": "^1.9.0",
+    "pegjs": "~0.8.0"
+  }
+}

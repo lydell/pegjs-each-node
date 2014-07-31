@@ -1,0 +1,215 @@
+[
+  [{
+    "type": "grammar",
+    "initializer": null
+  }, "rules"],
+  [{
+    "type": "rule",
+    "name": "Rule"
+  }, "expression"],
+  [{
+    "type": "choice"
+  }, "alternatives"],
+  [{
+    "type": "labeled",
+    "label": "label"
+  }, "expression"],
+  [{
+    "type": "literal",
+    "value": "foo",
+    "ignoreCase": false
+  }],
+  [{
+    "type": "action",
+    "code": " action 1 "
+  }, "expression"],
+  [{
+    "type": "literal",
+    "value": "foo",
+    "ignoreCase": true
+  }],
+  [{
+    "type": "action",
+    "code": "action 3"
+  }, "expression"],
+  [{
+    "type": "sequence"
+  }, "elements"],
+  [{
+    "type": "labeled",
+    "label": "a"
+  }, "expression"],
+  [{
+    "type": "any"
+  }],
+  [{
+    "type": "labeled",
+    "label": "b"
+  }, "expression"],
+  [{
+    "type": "zero_or_more"
+  }, "expression"],
+  [{
+    "type": "action",
+    "code": " return f "
+  }, "expression"],
+  [{
+    "type": "sequence"
+  }, "elements"],
+  [{
+    "type": "rule_ref",
+    "name": "Space"
+  }],
+  [{
+    "type": "labeled",
+    "label": "f"
+  }, "expression"],
+  [{
+    "type": "rule_ref",
+    "name": "Foo"
+  }],
+  [{
+    "type": "simple_not"
+  }, "expression"],
+  [{
+    "type": "rule_ref",
+    "name": "Space"
+  }],
+  [{
+    "type": "simple_and"
+  }, "expression"],
+  [{
+    "type": "rule_ref",
+    "name": "Foo"
+  }],
+  [{
+    "type": "rule",
+    "name": "Foo"
+  }, "expression"],
+  [{
+    "type": "sequence"
+  }, "elements"],
+  [{
+    "type": "any"
+  }],
+  [{
+    "type": "semantic_and",
+    "code": " return true "
+  }],
+  [{
+    "type": "rule",
+    "name": "Bar"
+  }, "expression"],
+  [{
+    "type": "named",
+    "name": "bar"
+  }, "expression"],
+  [{
+    "type": "sequence"
+  }, "elements"],
+  [{
+    "type": "text"
+  }, "expression"],
+  [{
+    "type": "any"
+  }],
+  [{
+    "type": "labeled",
+    "label": "space"
+  }, "expression"],
+  [{
+    "type": "rule_ref",
+    "name": "Space"
+  }],
+  [{
+    "type": "semantic_not",
+    "code": " return false "
+  }],
+  [{
+    "type": "rule",
+    "name": "Space"
+  }, "expression"],
+  [{
+    "type": "class",
+    "parts": [
+      " ",
+    "\t"
+      ],
+    "inverted": false,
+    "ignoreCase": false,
+    "rawText": "[ \\t]"
+  }],
+  [{
+    "type": "rule",
+    "name": "Nested"
+  }, "expression"],
+  [{
+    "type": "action",
+    "code": "\n    return text()\n  "
+  }, "expression"],
+  [{
+    "type": "sequence"
+  }, "elements"],
+  [{
+    "type": "literal",
+    "value": "a",
+    "ignoreCase": false
+  }],
+  [{
+    "type": "one_or_more"
+  }, "expression"],
+  [{
+    "type": "action",
+    "code": " return num + zero "
+  }, "expression"],
+  [{
+    "type": "sequence"
+  }, "elements"],
+  [{
+    "type": "labeled",
+    "label": "num"
+  }, "expression"],
+  [{
+    "type": "choice"
+  }, "alternatives"],
+  [{
+    "type": "action",
+    "code": "one"
+  }, "expression"],
+  [{
+    "type": "labeled",
+    "label": "one"
+  }, "expression"],
+  [{
+    "type": "literal",
+    "value": "1",
+    "ignoreCase": false
+  }],
+  [{
+    "type": "action",
+    "code": "two"
+  }, "expression"],
+  [{
+    "type": "labeled",
+    "label": "two"
+  }, "expression"],
+  [{
+    "type": "literal",
+    "value": "2",
+    "ignoreCase": false
+  }],
+  [{
+    "type": "labeled",
+    "label": "zero"
+  }, "expression"],
+  [{
+    "type": "literal",
+    "value": "0",
+    "ignoreCase": false
+  }],
+  [{
+    "type": "literal",
+    "value": "b",
+    "ignoreCase": false
+  }]
+]
