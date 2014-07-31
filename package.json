@@ -1,6 +1,6 @@
 {
   "name": "pegjs-each-node",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Simon Lydell",
   "license": "MIT",
   "description": "pegjs plugin helper: Run a function once for each node in a grammar AST.",
