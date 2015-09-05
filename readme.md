@@ -4,7 +4,7 @@ pegjs-each-node [![Build Status](https://travis-ci.org/lydell/pegjs-each-node.sv
 `npm install pegjs-each-node`
 
 ```js
-var eachNode = require("pegjs-each-node")
+var eachNode = require('pegjs-each-node')
 
 eachNode(startNode, function(node, parent) {
   // This function will be run once with `startNode` itself, and then once for
