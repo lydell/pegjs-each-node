@@ -15,6 +15,8 @@ function test(grammar, expected) {
     var parents = {}
     eachNode(ast, function(node, parent) {
       var actualNode = shallowCopy(node)
+      expect(actualNode).to.have.property("location").and.to.be.an("object")
+      delete actualNode.location
 
       var data = expected[index]
       var expectedNode = data[0]
