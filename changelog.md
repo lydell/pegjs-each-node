@@ -1,3 +1,8 @@
+### Version 0.2.1 (2016-09-08) ###
+
+- Deprecated the package.
+
+
 ### Version 0.2.0 (2014-07-31) ###
 
 - Added: The function passed to `eachNode` is now also called with the parent
